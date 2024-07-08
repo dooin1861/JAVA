@@ -1,0 +1,24 @@
+[버전 확인]
+
+java -version
+javac -version
+
+[자격 증명 관리] - [Windows 자격 증명] - [일반 자격 증명]에
+내 github.com이 들어가 있는지 확인
+
+[처음 리포지트리 만들고 나서]
+
+cmd 창 열기
+cd /
+cd _dev
+git init
+git add .
+git commit -m "아무 거나"
+git remote add origin https://github.com/dooin1861/abc.git
+git push -u origin master
+
+[리포지트리 만든 이후 깃허브에 업로드 할때]
+
+git add .
+git commit -m "아무 거나"
+git push origin -u master
