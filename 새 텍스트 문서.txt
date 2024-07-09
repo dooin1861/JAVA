@@ -29,6 +29,7 @@ git push -u origin master
 
 [리포지트리 만든 이후 깃허브에 업로드 할때]
 
+git init
 git add .
 git commit -m "아무 거나"
 git push origin -u master
