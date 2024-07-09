@@ -1,3 +1,13 @@
+ [07/08]
+
+
+git init = 현재 폴더를 깃의 관리하에 두는 것
+git status = 현재 상태를 확인하는 명령어
+git add . = 현재 변경된 것들을 깃에 업로드
+git commit -m "메시지" = 커밋 메시지를 깃에 추가
+git remote add origin
+git push -u origin master
+
 [버전 확인]
 
 java -version
@@ -22,3 +32,33 @@ git push -u origin master
 git add .
 git commit -m "아무 거나"
 git push origin -u master
+
+[커밋 메시지 변경할 때]
+
+git commit --amend -m "메시지 입력"
+git log -1  (변경 되었는지 확인)
+git push --force origin master
+
+
+ [07/09]
+
+0b = 2진수
+0 = 8진수
+0x = 16진수
+
+-locale ko_KR -encoding UTF-8 -charset UTF-8 -docencoding UTF-8
+
+github.com/jiwoong-jung/202407JAVA
+
+docker ps -a
+docker run --name apa000ex1 -d -p 8080:80 httpd
+docker stop apa000ex1
+docker rm apa000ex1
+docker image ls
+docker image rm
+
+docker run -it --name first-ubuntu ubuntu /bin/bash - 도커에 우분투 설치
+exit - 우분투 나가기
+docker exec -it first-ubuntu /bin/bash - 우분투 실행
+docker cp first-ubuntu:/home/ubuntu/HelloWorld.java . - 우분투에 있는 파일 복사
+docker cp HelloWorld.java first-ubuntu:/home/ubuntu - 외부 파일 우분투로 복사
