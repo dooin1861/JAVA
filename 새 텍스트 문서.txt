@@ -1,4 +1,4 @@
- [07/08]
+do [07/08]
 
 
 git init = 현재 폴더를 깃의 관리하에 두는 것
@@ -51,15 +51,43 @@ git push --force origin master
 
 github.com/jiwoong-jung/202407JAVA
 
-docker ps -a
-docker run --name apa000ex1 -d -p 8080:80 httpd
-docker stop apa000ex1
-docker rm apa000ex1
-docker image ls
-docker image rm
+docker ps -a 컨테이너 리스트
+docker run --name apa000ex2 -d -p 8880:80 httpd 생성
+docker stop apa000ex1 컨테이너 정지
+docker start apa000ex2 컨테이너 시작
+docker rm apa000ex1 컨테이너 삭제
+docker image ls = 이미지 리스트
+docker image rm = 이미지 삭제
+docker ps -aq, -qa = 컨테이너 ID 리스트
 
 docker run -it --name first-ubuntu ubuntu /bin/bash - 도커에 우분투 설치
-exit - 우분투 나가기
 docker exec -it first-ubuntu /bin/bash - 우분투 실행
 docker cp first-ubuntu:/home/ubuntu/HelloWorld.java . - 우분투에 있는 파일 복사
 docker cp HelloWorld.java first-ubuntu:/home/ubuntu - 외부 파일 우분투로 복사
+exit - 우분투 나가기
+
+[도커 데스크탑에서]
+/usr/local/apache2/htdocs/index.html - 수정
+docker cp apa000ex2:/usr/local/apache2/htdocs/index.html . - 도커에서 디렉토리로 복사
+docker cp index.html apa000ex2:/usr/local/apache2/htdocs/index.html . - 디렉토리에서 도커로 복사
+
+docker run --name nginx000ex6 -d -p 8884:80 nginx - 엔지닉스 생성
+
+docker run --name mysql000ex7 -dit -e MYSQL_ROOT_PASSWORD=1234 mysql - mysql 생성
+
+docker exec -it mysql000ex7 mysql -u root -p
+
+[mysql 명령어]
+show databases;
+create database test123;
+use test123;
+
+desc dept;
+
+create table dept (
+       deptno int (11),
+       dname varchar(14),
+       loc varchar(13));
+
+insert into dept (deptno, dname, loc)
+       values (10, 'Account', 'Seoul');
