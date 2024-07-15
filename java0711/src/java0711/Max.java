@@ -6,7 +6,7 @@ public class Max {
 		int max = a[0];
 		
 		for (int i = 1; i < a.length; i++) { // i가 a보다 작으면 1씩 증가 시킴
-			if (max < a[i]) {                // max가 a보다 작은지를 확인
+			if (max < a[i]) {                // max가 a보다 작은지를 확인 작다면 1씩 증가
 				max = a[i];                  // 조건이 충족되면 max를 a값과 동일하게 갱신
 			}
 		}

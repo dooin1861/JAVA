@@ -1,12 +1,9 @@
-package java0711;
+package Project1;
 
 import java.util.Scanner;
 
 public class Bank176P {
 	public static void main (String[] args) {
-		
-		Member member = null;
-		
 		Scanner scan = new Scanner(System.in);
 		
 		boolean run = true;
@@ -59,8 +56,6 @@ public class Bank176P {
 					System.out.printf("비밀번호 : %s\n", pass2);
 					System.out.printf("가입자 주민번호 앞자리 : %s\n", jumin);
 					System.out.printf("가입자 전화번호 : %s\n", phone);
-					
-					member = new Member(name1, jumin, phone);
 					break;
 				
 				case 3:

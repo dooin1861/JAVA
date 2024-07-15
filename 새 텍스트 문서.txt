@@ -80,9 +80,10 @@ docker exec -it mysql000ex7 mysql -u root -p
 [mysql 명령어]
 show databases;
 create database test123;
-use test123;
+use du;
 
 desc dept;
+select distinct deptno from emp;
 
 create table dept (
        deptno int (11),
@@ -91,3 +92,5 @@ create table dept (
 
 insert into dept (deptno, dname, loc)
        values (10, 'Account', 'Seoul');
+
+docker run --name mysql000ex11 --net=wordpress000net1 -e MYSQL_ROOT_PASSWORD=myrootpass -e  MYSQL_DATABASE=wordpress000db -e MYSQL_USER=wordpress000kun -e MYSQL_PASSWORD=wkunpass mysql --characger-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password -d
