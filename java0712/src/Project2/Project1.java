@@ -1,11 +1,34 @@
 package Project2;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Project1 {
 
 	public static void main(String[] args) {
-		Member member = null;
+		List<Member> list = null;
+
+		try (FileInputStream fis = new FileInputStream("c:\\temp\\members.dat");
+	             ObjectInputStream ois = new ObjectInputStream(fis)) {
+			Member[] list2 = (Member[]) ois.readObject();
+			list = new ArrayList<>(Arrays.asList(list2));   // 배열을 ArrayList로
+			System.out.println("파일에서 객체를 가져왔습니다.");
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		for (Member member : list) {
+			System.out.println(member);
+		}
+		System.out.println("총회원수:"+list.size());
+		
+		Member member = null; // 로그인 된 현재 사용자
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
 		while (run) {
@@ -14,7 +37,6 @@ public class Project1 {
 			System.out.println("-------------------------------------");
 			System.out.print("선택> ");
 			int menuNum = Integer.parseInt(scanner.nextLine());
-			
 			switch (menuNum) {
 			case 1:
 				// 로그인 처리
@@ -24,16 +46,14 @@ public class Project1 {
 				String name = scanner.nextLine(); // name 변수의 값 입력
 				System.out.print("패스워드:");
 				String strPassword = scanner.nextLine();//패스워드입력
-				int password = Integer.parseInt(strPassword); // stpassword값을 정수로 변환
-				if (name.equals("java")) {
-					if (password == 12345) {
-						System.out.println("로그인 성공");
-					} else {
-						System.out.println("로그인 실패:패스워드가 틀림");
+				
+				for (Member member2 : list) {
+					if (member2.getName().equals(name) && member2.getSsn().equals(strPassword)) {
+						member = member2;
+						break;
 					}
-				} else {
-					System.out.println("로그인 실패:아이디 존재하지 않음");
 				}
+				System.out.println(member);
 				break;
 			case 2:
 				// 회원 가입
@@ -51,8 +71,7 @@ public class Project1 {
 				System.out.println("1. 이름: " + name2);
 				System.out.println("2. 주민번호 앞 6자리: " + ssn); 
 				System.out.println("3. 전화번호: " + tel);
-				member = new Member(name2, ssn, tel);
-
+				list.add(new Member(name2, ssn, tel));
 				break;
 			case 3:
 				// 예금 출금
@@ -68,15 +87,15 @@ public class Project1 {
 					switch (menuNum2) {
 					case 1:
 						System.out.print("예금액> ");
-						member.balance += Integer.parseInt(scanner.nextLine());
+						member.deposit(Integer.parseInt(scanner.nextLine()));
 						break;
 					case 2:
 						System.out.print("출금액> ");
-						member.balance -= Integer.parseInt(scanner.nextLine());
+						member.withdraw(Integer.parseInt(scanner.nextLine()));
 						break;
 					case 3:
 						System.out.print("잔고> ");
-						System.out.println(member.balance);
+						System.out.println(member.getBalance());
 						break;
 					case 4:
 						run2 = false;
@@ -87,6 +106,16 @@ public class Project1 {
 				System.out.println("예금/출금 프로그램 종료");
 				break;
 			case 4:
+				Member[] list2 = list.toArray(new Member[list.size()]); // ArrayList를 배열로
+				try (FileOutputStream fos = new FileOutputStream("c:\\temp\\members.dat");
+			             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+					 oos.writeObject(list2);
+			         System.out.println("객체를 파일에 저장했습니다.");
+					
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				run = false;
 				break;
 			}

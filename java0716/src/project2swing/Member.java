@@ -1,4 +1,4 @@
-package Project2;
+package project2swing;
 
 import java.io.Serializable;
 
@@ -77,7 +77,5 @@ public class Member implements Serializable {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
-	
-	
 	
 }

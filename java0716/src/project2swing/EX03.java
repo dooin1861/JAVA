@@ -1,4 +1,4 @@
-package Project2;
+package project2swing;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

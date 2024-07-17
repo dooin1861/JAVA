@@ -16,7 +16,7 @@ public class EX01 {
 		var t = 400;
 		var s = "가나다";
 		int kk;
-		System.out.println(kk);
+		System.out.println("abc");
 	}
 
 }
