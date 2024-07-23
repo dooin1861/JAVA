@@ -84,6 +84,4 @@ public class Account implements Serializable {
 				+ ", balance=" + balance + "]";
 	}
     
-    
-
 }

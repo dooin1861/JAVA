@@ -93,3 +93,14 @@ create table dept (
 insert into dept (deptno, dname, loc)
        values (10, 'Account', 'Seoul');
 
+
+
+[0719]
+
+CRUD
+
+Create - insert문
+Read   - select문
+Update - 
+Delete  - 
+
