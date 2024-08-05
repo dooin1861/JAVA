@@ -104,3 +104,20 @@ Read   - select문
 Update - 
 Delete  - 
 
+public static void main(String[] args) {
+		String URL = "jdbc:mysql://localhost:3307/spring5fs";	
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "";
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("드라이버 로딩");
+			conn = DriverManager.getConnection(URL, "root", "mysql");
+			System.out.println("Mysql 접속 완료");
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
