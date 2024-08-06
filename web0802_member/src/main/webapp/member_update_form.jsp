@@ -26,7 +26,7 @@
     ) {
         rs.next();
 %>
-        <form action="member_update.jsp" method="post">
+        <form action="member_update.jsp" method="get">
             <table>
                 <tr>
                     <td>아이디</td>

@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
-<%@page import="board.MemberDAO"%>
-<%@page import="board.MemberDTO"%>
+<%@page import="Member.MemberDAO"%>
+<%@page import="Member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     

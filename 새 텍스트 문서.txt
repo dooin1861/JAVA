@@ -71,29 +71,13 @@ exit - 우분투 나가기
 docker cp apa000ex2:/usr/local/apache2/htdocs/index.html . - 도커에서 디렉토리로 복사
 docker cp index.html apa000ex2:/usr/local/apache2/htdocs/index.html . - 디렉토리에서 도커로 복사
 
-docker run --name nginx000ex6 -d -p 8884:80 nginx - 엔지닉스 생성
+docker run --name nginx000ex6 -d -p 8884:80 nginx // 엔지닉스 생성
 
 docker run --name mysql000ex7 -dit -e MYSQL_ROOT_PASSWORD=1234 mysql - mysql 생성
 
 docker exec -it mysql000ex7 mysql -u root -p
 
-[mysql 명령어]
-show databases;
-create database test123;
-use du;
-
-desc dept;
-select distinct deptno from emp;
-
-create table dept (
-       deptno int (11),
-       dname varchar(14),
-       loc varchar(13));
-
-insert into dept (deptno, dname, loc)
-       values (10, 'Account', 'Seoul');
-
-
+docker pull oracleinanutshell/oracle-xe-11g // 다운로드
 
 [0719]
 
@@ -121,3 +105,10 @@ public static void main(String[] args) {
 			e.printStackTrace();
 		}
 	}
+
+
+사원 리스트 수정하기
+
+
+기본키 = unique + not null
+외래키 = 다른 테이블의 기본키
