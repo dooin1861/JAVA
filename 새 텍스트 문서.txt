@@ -24,7 +24,7 @@ cd _dev
 git init
 git add .
 git commit -m "아무 거나"
-git remote add origin https://github.com/dooin1861/abc.git
+https://github.com/dooin1861/JAVA.git
 git push -u origin master
 
 [리포지트리 만든 이후 깃허브에 업로드 할때]
