@@ -1,5 +1,5 @@
 jdk*
 .metadata
-.pdf
+*.pdf
 Servers
 .git
