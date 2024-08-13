@@ -5,7 +5,7 @@ git init = 현재 폴더를 깃의 관리하에 두는 것
 git status = 현재 상태를 확인하는 명령어
 git add . = 현재 변경된 것들을 깃에 업로드
 git commit -m "메시지" = 커밋 메시지를 깃에 추가
-git remote add origin
+git remote add origin https://github.com/dooin1861/JAVA.git
 git push -u origin master
 
 [버전 확인]
