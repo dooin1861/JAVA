@@ -20,8 +20,9 @@ alter table emp_hw
 create table emp_hw
     as select * from emp;         -- 문제 5번 1
     
-alter table emp_hw
-    add remark varchar(30) null;  -- 문제 5번 2
+insert into emp_hw
+select empno, ename, job, mgr, hiredate, sal, comm, deptno, null
+    from emp;                     -- 문제 5번 2
 
 drop table emp_hw;                -- 문제 6번
 
