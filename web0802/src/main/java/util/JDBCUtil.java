@@ -12,6 +12,7 @@ public class JDBCUtil {
 		String URL = "jdbc:mysql://localhost:3307/spring5fs";
 		Connection conn = null;
 		try {
+			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, "root", "mysql");
 		} catch (ClassNotFoundException | SQLException e) {

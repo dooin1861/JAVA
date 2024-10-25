@@ -51,6 +51,12 @@ git push --force origin master
 
 github.com/jiwoong-jung/202407JAVA
 
+github.com/Jiwoong-Jung/202408front
+
+https://github.com/jiwoong-jung/OrderItem
+
+https://github.com/Jiwoong-Jung/202410SB
+
 http://choongang.atosoft.net/
 
 docker ps -a 컨테이너 리스트
@@ -109,8 +115,56 @@ public static void main(String[] args) {
 	}
 
 
-사원 리스트 수정하기
+<%
+//데이터베이스 접속 코드
+String URL = "jdbc:mysql://localhost:3307/spring5fs";
+Connection conn = null;
+PreparedStatement pstmt = null;
+Class.forName("com.mysql.cj.jdbc.Driver");
+conn = DriverManager.getConnection(URL, "root", "mysql");
+%>
+
 
 
 기본키 = unique + not null
 외래키 = 다른 테이블의 기본키
+
+
+maven 프로젝트 만들기
+1. 프로젝트에서 configure -> maven
+2. pom.xml에서 <dependencies>에 내용추가
+3. alt+f5로 해당 프로젝트를 업데이트
+
+mybatis 만들기
+1. 'mybatis' 패키지 만들기
+2. 'mybatis' 패키지안에 'config' 패키지 생성 -> config.xml 넣기
+3. 'sql'패키지를 만들고 mapper 넣기
+
+
+
+서브쿼리중에 from 절에 사용되는 서브쿼리 = 인라인 뷰
+
+
+1. 명령 프롬프트를 관리자 권한으로 열고
+
+2. executionpolicy
+
+3. set-executionpolicy unrestricted
+
+
+
+npm install -g @vue/cli
+vue create (vue-project)
+cd (vue-project)
+npm run serve
+vue add router // 라우터 설치
+
+
+https://thebook.io/080203/
+
+루시 - 스윙4, 호르몬2 [4번 공, 5번 공, 6번 공]
+파이퍼 - 블루스4, 송곳니2(스윙2) [4번 이상마, 5번 공 or 물리, 6번 공 or 장악]
+
+괴수 - 카오스, 스윙
+주먹 - 송곳니, 호르몬
+송곳니 - 극지, 블루스

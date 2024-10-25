@@ -1,0 +1,11 @@
+도커에 rabbitMQ 올리기
+
+docker run -d -p 15672:15672 -p 5672:5672 --name rabbitmq rabbitmq
+
+http://localhost:15672
+
+docker exec rabbitmq rabbitmq-plugins enable rabbitmq_management
+
+
+cd  /etc/rabbitmq/conf.d/
+echo management_agent.disable_metrics_collector = false > management_agent.disable_metrics_collector.conf
