@@ -32,13 +32,13 @@ git push -u origin master
 git init
 git add .
 git commit -m "아무 거나"
-git push origin -u master
+git push origin -u main
 
 [커밋 메시지 변경할 때]
 
 git commit --amend -m "메시지 입력"
 git log -1  (변경 되었는지 확인)
-git push --force origin master
+git push --force origin main
 
 
  [07/09]
