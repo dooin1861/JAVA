@@ -7,6 +7,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import spring.AuthService;
 import spring.ChangePasswordService;
 import spring.MemberDao;
 import spring.MemberRegisterService;
@@ -19,9 +20,9 @@ public class MemberConfig {
 	public DataSource dataSource() {
 		DataSource ds = new DataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost/spring5fs?characterEncoding=utf8&useSSL=false&autoReconnection=true");
-		ds.setUsername("spring5");
-		ds.setPassword("spring5");
+		ds.setUrl("jdbc:mysql://localhost:3307/spring5fs?characterEncoding=utf8&useSSL=false&autoReconnection=true");
+		ds.setUsername("root");
+		ds.setPassword("mysql");
 		ds.setInitialSize(2);
 		ds.setMaxActive(10);
 		ds.setTestWhileIdle(true);
@@ -52,5 +53,12 @@ public class MemberConfig {
 		ChangePasswordService pwdSvc = new ChangePasswordService();
 		pwdSvc.setMemberDao(memberDao());
 		return pwdSvc;
+	}
+	
+	@Bean
+	public AuthService authService() {
+		AuthService authService = new AuthService();
+		authService.setMemberDao(memberDao());
+		return authService;
 	}
 }
